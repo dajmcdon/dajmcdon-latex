@@ -8,6 +8,11 @@
 \usepackage[round]{natbib}
 \usepackage[margin=2.5cm]{geometry}
 \newcommand{\email}[1]{\href{mailto:#1}{#1}}
+
+
+% minor adjustments to ShorTeX
+\let\argmin\relax\DeclareMathOperator*{\argmin}{argmin}
+\let\argmax\relax\DeclareMathOperator*{\argmax}{argmax}
 \renewcommand{\top}{\mathsf{T}}
 \renewcommand{\d}{\mathsf{d}}
 
@@ -63,6 +68,12 @@ and I similarly prefer
 Y\ |\ X \sim \Norm(X,\ \sigma^2) 
 \quad\textrm{to}\quad Y | X \sim \Norm(X,\sigma^2).
 \] 
+Note that the reals are $\reals^p$. There is also
+\[
+\shbeta = \argmin_{\beta \in \reals^p} \frac{1}{2n}\norm{\sky - \skX\beta}_2^2 + 
+\lambda \norm{\beta}_1. 
+\]
+
 
 \subsection{Cleveref}\label{sec:clever}
 
@@ -97,8 +108,10 @@ $\skX$.'') or the name of a software package that's lowercase, \eg
 \item Use $x\gg y$ not $x >>y$.
 \item Careful with parentheticals and references. Wrong: (see, \eg
 \citet{Akaike1973}). Right: (see, \eg \citealp{Akaike1973}).
-\item Never use \texttt{eqnarray}, always use \texttt{align} (though ShorTeX
-makes \verb+\[   \]+ into an align environment.)
+\item Never use \texttt{eqnarray}, always use \texttt{align}. Note that ShorTeX
+makes \verb+\[   \]+ into an align environment, so you can just use that always.
+\item For editing purposes, it is much better if the text is hard-wrapped rather
+than soft wrapped.
 \eitem
 
 \subsection{Tables}

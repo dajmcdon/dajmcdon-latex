@@ -17,4 +17,6 @@ you can use Homebrew on a Mac `brew install bib-tool`.)
 
 ## `paper/dajmcdon.tex`
 
+## Cleaning up junk
 
+- `git clean -xf`
