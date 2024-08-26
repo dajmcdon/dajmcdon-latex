@@ -8,6 +8,9 @@
 % minor adjustments to ShorTeX
 \let\argmin\relax\DeclareMathOperator*{\argmin}{argmin}
 \let\argmax\relax\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\minimize}{minimize}
+\DeclareMathOperator*{\maximize}{maximize}
+\DeclareMathOperator{\subjto}{\ \text{subject to}\ }
 \renewcommand{\top}{\mathsf{T}}
 \renewcommand{\d}{\mathsf{d}}
 
@@ -67,8 +70,18 @@ Y\ |\ X \sim \Norm(X,\ \sigma^2)
 Note that the reals are $\reals^p$. There is also
 \[
 \shbeta = \argmin_{\beta \in \reals^p} \frac{1}{2n}\norm{\sky - \skX\beta}_2^2 + 
-\lambda \norm{\beta}_1. 
+\lambda \norm{\beta}_1,
 \]
+and (with automatic sizing of the norm),
+\[
+\shbeta = \argmin_{\beta \in \reals^p} \frac{1}{2n}\norm*{\frac{y}{1} - X\beta}_2^2 + 
+\lambda \norm*{\beta}_1.
+\]
+
+Note that the indicator function looks like $\1\{\cdot\}$, but I sometimes
+prefer $\mathbf{1}\{\cdot\}$.
+
+
 
 
 \subsection{Cleveref}\label{sec:clever}
